@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Teaserss</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Vue 3 library -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" alt="" />
+            </a>
+
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+      <!-- slider section -->
+      <section class="slider_section ">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4 offset-md-1">
+              <div class="detail-box">
+                <h1>
+                  <span>{{ header.text1 }}</span>
+                  <br>
+                  <span>{{ header.text2 }} </span>
+                  <br>
+                  <span>{{ header.text3 }}</span>
+                </h1>
+                <p>
+                  {{ header.text4 }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end slider section -->
+    </div>
+
+    <!-- sale section -->
+
+    <section class="sale_section layout_padding-bottom">
+      <div class="container-fluid">
+        <div class="heading_container">
+
+        </div>
+        <div class="sale_container">
+          <div class="box" v-for="offer in offers" :key="offer.offerId">
+            <div class="img-box">
+              <img :src="offer.img" alt="">
+            </div>
+            <div class="detail-box">
+              <h6>
+                {{ offer.title }}
+              </h6>
+              <p>
+                {{ offer.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- end sale section -->
+
+    <!-- deal section -->
+
+    <section class="deal_section layout_padding-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  {{ publicity.text1 }}
+                </h2>
+              </div>
+              <p>
+                {{ publicity.text2 }}
+              </p>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <div class="box b1">
+                <img :src="publicity.img1" alt="">
+              </div>
+              <div class="box b1">
+                <img :src="publicity.img2" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end deal section -->
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section ">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span>
+        </p>
+      </div>
+    </section>
+    <!-- end  footer section -->
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+
+  </div>
+
+  <script type="module">
+
+    const { createApp, ref } = Vue;
+  
+    createApp({
+      data() {
+        const message = ref("Hola Vue !!!")
+        return {
+          header: {
+            text1: "Moderno",
+            text2: "Departamento",
+            text3: "Casa",
+            text4: "Es un hecho establecido desde hace mucho tiempo que un lector se distraerá con el contenido legible de"
+          },
+          offers: [
+            { offerId: 1, title: "CASA DE APARTAMENTOS 1", description: "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, 1 pero", img: "images/s-1.jpg" },
+            { offerId: 2, title: "CASA DE APARTAMENTOS 2", description: "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, 2 pero", img: "images/s-2.jpg" },
+            { offerId: 3, title: "CASA DE APARTAMENTOS 3", description: "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, 3 pero", img: "images/s-3.jpg" },
+            { offerId: 4, title: "CASA DE APARTAMENTOS 4", description: "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, 4 pero", img: "images/s-4.jpg" },
+            { offerId: 5, title: "CASA DE APARTAMENTOS 5", description: "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, 5 pero", img: "images/s-5.jpg" },
+            { offerId: 6, title: "CASA DE APARTAMENTOS 6", description: "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, 6 pero", img: "images/s-6.jpg" },
+          ],
+          publicity: {
+            text1: "Muy buen trato para casa",
+            text2: "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+            img1: "images/d-1.jpg",
+            img2: "images/d-2.jpg"
+          }
+        }
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+
+</html>
